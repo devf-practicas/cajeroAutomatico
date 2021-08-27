@@ -23,7 +23,8 @@ function validarDatos(){
 
 
     else if(user=="ever" && pass=="ever"){
-        alert("Hola Ever")
+        window.location.href="/dashboard/"; 
+        //alert("Hola Ever")
     }
 
     else if(user==="" && pass===""){
