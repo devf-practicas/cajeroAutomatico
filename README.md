@@ -41,7 +41,7 @@ del DOM crea una interfaz con html y css que maneje toda la interacción descrit
 
 * HTML
 * CSS
-* JS
+* Javascript
 
  
 ## Autores ✒️
