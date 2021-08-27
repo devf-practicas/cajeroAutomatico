@@ -8,23 +8,26 @@
 function validarDatos(){
     var user = document.getElementById("user").value
     var pass = document.getElementById("password").value
+    
 
     if(user=="carlos" && pass=="carlos"){
-        alert("Hola Carlos ")
+        window.location="/dashboard/"; 
+        //alert("Hola Carlos ")
     }
 
     else if(user=="cecilia" && pass=="cecilia"){
-        alert("Hola Cecilia")
+        window.location="/dashboard/"; 
+        //alert("Hola Cecilia")
     }
 
     else if(user=="stephano" && pass=="stephano"){
-        alert("Hola Estephano")
+        window.location="/dashboard/"; 
+        //alert("Hola Estephano")
     }
 
 
     else if(user=="ever" && pass=="ever"){
-        window.location.href="/dashboard/"; 
-        //alert("Hola Ever")
+        window.location="/dashboard/";  
     }
 
     else if(user==="" && pass===""){
@@ -35,5 +38,5 @@ function validarDatos(){
     else{
         alert("usuario o  password incorrectos")
     }
-}
- 
+    return false;  // Add return false, because submitting a form will refresh your page return false will keep the page static and your window.location.href will redirect your page.
+} 
