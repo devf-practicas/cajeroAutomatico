@@ -15,6 +15,7 @@ html {
   body {
     font-family: "Poppins", sans-serif;
     height: 100vh;
+    background-color: rgb(241, 237, 237);
   }
   
   
@@ -40,20 +41,31 @@ html {
     margin: 40px 8px 10px 8px; 
     color: #cccccc;
   }
+
+  .cuenta_personal {
+    padding-left: 20px;
+    color: rgb(10, 10, 163);
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .ingrese_monto {
+    padding-left: 20px;
+    color: rgb(10, 10, 163);
+    font-family: 'Times New Roman', Times, serif;
+  }
   
-  /*.botones {
+  .botones {
     display: flex;
     justify-content: space-evenly;
    
-  }*/
-  .botones {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 25% 25% 25% 25%;
   }
-  
-  
 
+  #cerrar_id {
+    padding: 15px 80px;
+    margin: 5px 20px 40px 20px;
+  }
+
+  
   /* STRUCTURE */
   
   .wrapper {
