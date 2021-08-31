@@ -40,3 +40,36 @@ function validarDatos(){
     }
     return false;  // Add return false, because submitting a form will refresh your page return false will keep the page static and your window.location.href will redirect your page.
 } 
+function consultarSaldo(){
+    const Cantidad=document.getElementById('cuenta').value
+    alert("Su saldo en cuenta es: "+Cantidad)
+}
+function ingresarMonto(){
+    const Cantidad = parseInt(document.getElementById('monto1').value)
+    const Cantidad1 = parseInt(document.getElementById('cuenta').value)
+    document.getElementById('cuenta').value = parseInt(Cantidad + Cantidad1)
+    const saldo = parseInt(Cantidad + Cantidad1)
+    if(saldo>991){
+        const ingreso = 990 - Cantidad1
+        alert("Su ingreso excede nuestra politica, puede ingresar hasta: "+ ingreso)
+        document.getElementById('cuenta').value = parseInt(Cantidad1)
+    }else{
+        alert("Su monto ingresado es: "+Cantidad)
+        alert("Su saldo es: "+saldo)
+    }
+    
+}
+function retirarMonto(){
+    const Cantidad = parseInt(document.getElementById('monto1').value)
+    const Cantidad1 = parseInt(document.getElementById('cuenta').value)
+    document.getElementById('cuenta').value = parseInt( Cantidad1 - Cantidad)
+    const saldo = parseInt(Cantidad1 - Cantidad)
+    if(saldo<10){
+        const egreso = Cantidad1 - 10
+        alert("Su egreso excede nuestra politica, puede retirar hasta: "+ egreso)
+        document.getElementById('cuenta').value = parseInt(Cantidad1)
+    }else{
+        alert("Su monto a retirar es: "+Cantidad)
+        alert("Su saldo es: "+saldo)
+    }
+}

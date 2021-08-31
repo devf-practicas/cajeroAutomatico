@@ -8,7 +8,22 @@
 </head>
 <body>
 
-    <h1> el dashboard para que el usuario interactue</h1> 
+    <h1> Bienvenidos al detalle de tus cuentas</h1>
+    <label for="">Cuenta Personal 001 con Saldo: 
+        <span><input type="text" value="500" id="cuenta"></span>
+    </label>
+    <hr>
+    <form action="">
+        <label for="">Ingrese Monto
+            <input type="text" name="monto" id="monto1">
+        </label>
+       
+    </form>
+    <br>
+        <input type="button" value="Consulta" id="consulta_id" onclick="consultarSaldo()">
+        <input type="button" value="Ingreso de Monto" id="ingreso_id" onclick="ingresarMonto()">
+        <input type="button" value="Retirar Monto" id="retiro_id" onclick="retirarMonto()">
     
+    <script type="text/javascript" src="/js/cajero.js"> </script>
 </body>
 </html>
