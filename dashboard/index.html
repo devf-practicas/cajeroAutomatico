@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/cajero.css">
     <title>Bienvenido</title>
 </head>
 <body>
 
     <h1> Bienvenidos al detalle de tus cuentas</h1>
     <label for="">Cuenta Personal 001 con Saldo: 
-        <span><input type="text" value="500" id="cuenta"></span>
+        <input type="text" value="500" class="form-control" id="cuenta">
     </label>
     <hr>
     <form action="">
@@ -20,9 +22,12 @@
        
     </form>
     <br>
-        <input type="button" value="Consulta" id="consulta_id" onclick="consultarSaldo()">
-        <input type="button" value="Ingreso de Monto" id="ingreso_id" onclick="ingresarMonto()">
-        <input type="button" value="Retirar Monto" id="retiro_id" onclick="retirarMonto()">
+    <div class="botones">
+        <input type="button" value="Consulta" class="consulta_class" id="consulta_id" onclick="consultarSaldo()">
+        <input type="button" value="Ingreso de Monto" class="ingreso_class" id="ingreso_id" onclick="ingresarMonto()">
+        <input type="button" value="Retirar Monto" class="retiro_class" id="retiro_id" onclick="retirarMonto()">
+        <button type="button" class="btn btn-danger">Cerrar sesion</button>
+    </div>
     
     <script type="text/javascript" src="/js/cajero.js"> </script>
 </body>

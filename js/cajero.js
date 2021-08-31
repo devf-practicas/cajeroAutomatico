@@ -45,14 +45,14 @@ function consultarSaldo(){
     alert("Su saldo en cuenta es: "+Cantidad)
 }
 function ingresarMonto(){
-    const Cantidad = parseInt(document.getElementById('monto1').value)
-    const Cantidad1 = parseInt(document.getElementById('cuenta').value)
-    document.getElementById('cuenta').value = parseInt(Cantidad + Cantidad1)
-    const saldo = parseInt(Cantidad + Cantidad1)
+    const Cantidad = parseFloat(document.getElementById('monto1').value)
+    const Cantidad1 = parseFloat(document.getElementById('cuenta').value)
+    document.getElementById('cuenta').value = parseFloat(Cantidad + Cantidad1)
+    const saldo = parseFloat(Cantidad + Cantidad1)
     if(saldo>991){
         const ingreso = 990 - Cantidad1
         alert("Su ingreso excede nuestra politica, puede ingresar hasta: "+ ingreso)
-        document.getElementById('cuenta').value = parseInt(Cantidad1)
+        document.getElementById('cuenta').value = parseFloat(Cantidad1)
     }else{
         alert("Su monto ingresado es: "+Cantidad)
         alert("Su saldo es: "+saldo)
@@ -60,14 +60,14 @@ function ingresarMonto(){
     
 }
 function retirarMonto(){
-    const Cantidad = parseInt(document.getElementById('monto1').value)
-    const Cantidad1 = parseInt(document.getElementById('cuenta').value)
-    document.getElementById('cuenta').value = parseInt( Cantidad1 - Cantidad)
-    const saldo = parseInt(Cantidad1 - Cantidad)
+    const Cantidad = parseFloat(document.getElementById('monto1').value)
+    const Cantidad1 = parseFloat(document.getElementById('cuenta').value)
+    document.getElementById('cuenta').value = parseFloat( Cantidad1 - Cantidad)
+    const saldo = parseFloat(Cantidad1 - Cantidad)
     if(saldo<10){
         const egreso = Cantidad1 - 10
         alert("Su egreso excede nuestra politica, puede retirar hasta: "+ egreso)
-        document.getElementById('cuenta').value = parseInt(Cantidad1)
+        document.getElementById('cuenta').value = parseFloat(Cantidad1)
     }else{
         alert("Su monto a retirar es: "+Cantidad)
         alert("Su saldo es: "+saldo)
