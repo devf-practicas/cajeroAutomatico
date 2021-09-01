@@ -99,6 +99,10 @@ function ingresarMontos(){
         alert("Por favor ingresa un monto")
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
     }
+    else if(document.getElementById('insertar_dogecoin').value<0){
+        alert("La cantidad no se puede ingresar")
+        document.getElementById('consultas_id').value = parseFloat(Cantidades1)
+    }
     else{
         alert("Su monto ingresado es: "+Cantidades)
         alert("Su saldo es: "+saldos)
@@ -117,6 +121,10 @@ function retirarMontos(){
     }
     else if(document.getElementById('retirar_dogecoin').value===""){
         alert("Por favor ingresa un monto")
+        document.getElementById('consultas_id').value = parseFloat(Cantidades1)
+    }
+    else if(document.getElementById('retirar_dogecoin').value<0){
+        alert("La cantidad no se puede retirar")
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
     }
     
