@@ -91,16 +91,22 @@ function ingresarMontos(){
     const saldos = parseFloat(Cantidades + Cantidades1)
     if(saldos>991){
         const ingresos = 990 - Cantidades1
-        alert("Tu ingreso excede nuestra Dogelitica, puedes ingresar hasta: "+ ingresos)
+        toastr.error("Tu ingreso excede nuestra Dogelitica, puedes ingresar hasta: "+ ingresos)
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
     }
     
     else if(document.getElementById('insertar_dogecoin').value===""){
-        alert("Por favor ingresa un monto")
+        toastr.warning(' Ingreso un monto', {
+            "progressBar": true,
+            "closeButton": true,
+        })
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
     }
     else if(document.getElementById('insertar_dogecoin').value<0){
-        alert("Un fallo en la Matrix, no puedes depositar cantidades negativas")
+        toastr.error(' no puedes depositar cantidades negativas','Un fallo en la Matrix', {
+            "progressBar": true,
+            "closeButton": true,
+        }) 
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
     }
     else{
@@ -124,7 +130,10 @@ function retirarMontos(){
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
     }
     else if(document.getElementById('retirar_dogecoin').value<0){
-        alert("Error de Javas..., no es cierto, ingresa una cantidad positiva")
+        toastr.error(' no es cierto, ingresa una cantidad positiva','Error de Javas...', {
+            "progressBar": true,
+            "closeButton": true,
+        })
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
     }
     
