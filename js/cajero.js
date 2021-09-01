@@ -38,7 +38,7 @@ function validarDatos(){
     else{
         alert("usuario o  password incorrectos")
     }
-    return false;  // Add return false, because submitting a form will refresh your page return false will keep the page static and your window.location.href will redirect your page.
+    return false;  // Add return false, because submitting a form will refresh the page return false will keep the page static and your window.location.href will redirect.
 } 
 function consultarSaldo(){
     const Cantidad=document.getElementById('cuenta').value
@@ -78,7 +78,7 @@ function cerrarSesion () {
     window.location = "/"
 }
 
-//Interfaze Ever
+//Interface Ever
 
 function consultarSaldos(){
     const Cantidades=document.getElementById('consultas_id').value
@@ -91,7 +91,7 @@ function ingresarMontos(){
     const saldos = parseFloat(Cantidades + Cantidades1)
     if(saldos>991){
         const ingresos = 990 - Cantidades1
-        alert("Su ingreso excede nuestra politica, puede ingresar hasta: "+ ingresos)
+        alert("Tu ingreso excede nuestra Dogelitica, puedes ingresar hasta: "+ ingresos)
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
     }
     
@@ -100,12 +100,12 @@ function ingresarMontos(){
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
     }
     else if(document.getElementById('insertar_dogecoin').value<0){
-        alert("La cantidad no se puede ingresar")
+        alert("Un fallo en la Matrix, no puedes depositar cantidades negativas")
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
     }
     else{
-        alert("Su monto ingresado es: "+Cantidades)
-        alert("Su saldo es: "+saldos)
+        alert("Depositaste: "+Cantidades +" Dogecoins")
+        alert("Tu  nuevo saldo es: "+saldos +" Dogecoins")
     }
     
 }
@@ -116,20 +116,20 @@ function retirarMontos(){
     const saldos = parseFloat(Cantidades1 - Cantidades)
     if(saldos<10){
         const egresos = Cantidades1 - 10
-        alert("Su egreso excede nuestra politica, puede retirar hasta: "+ egresos)
+        alert("Tu egreso excede nuestra Dogelitica, puedes retirar hasta: "+ egresos +" Dogecoins")
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
     }
     else if(document.getElementById('retirar_dogecoin').value===""){
-        alert("Por favor ingresa un monto")
+        alert("Ingresa el monto que deseas retirar")
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
     }
     else if(document.getElementById('retirar_dogecoin').value<0){
-        alert("La cantidad no se puede retirar")
+        alert("Error de Javas..., no es cierto, ingresa una cantidad positiva")
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
     }
     
     else{
-        alert("Su monto a retirar es: "+Cantidades)
-        alert("Su saldo es: "+saldos)
+        alert("Estas retiranto: "+Cantidades +" Dogecoins")
+        alert("Tu  nuevo saldo es: "+saldos +" Dogecoins")
     }
 }
