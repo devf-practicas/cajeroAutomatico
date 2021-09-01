@@ -82,7 +82,8 @@ function cerrarSesion () {
 
 function consultarSaldos(){
     const Cantidades=document.getElementById('consultas_id').value
-    alert("Su saldo en cuenta es: "+Cantidades)
+    toastr.info('Estimado Dogecliente el saldo en su cuenta es de $'+Cantidades +' Dogecoins')
+    //alert("Su saldo en cuenta es: "+Cantidades)//
 }
 function ingresarMontos(){
     const Cantidades = parseFloat(document.getElementById('insertar_dogecoin').value)
@@ -91,27 +92,29 @@ function ingresarMontos(){
     const saldos = parseFloat(Cantidades + Cantidades1)
     if(saldos>991){
         const ingresos = 990 - Cantidades1
-        toastr.error("Tu ingreso excede nuestra Dogelitica, puedes ingresar hasta: "+ ingresos)
+        toastr.error('Tu ingreso excede nuestra Dogepolitica, puedes ingresar hasta: $'+ ingresos+'Dogecoins')
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
     }
     
     else if(document.getElementById('insertar_dogecoin').value===""){
-        toastr.warning(' Ingreso un monto', {
+        toastr.warning('Estimado Dogecliente, ingresa el monto que deseas depositar', {
             "progressBar": true,
             "closeButton": true,
         })
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
     }
     else if(document.getElementById('insertar_dogecoin').value<0){
-        toastr.error(' no puedes depositar cantidades negativas','Un fallo en la Matrix', {
+        toastr.error('No puedes depositar cantidades negativas, ingresa un valor positivo','Tenemos un código 3312', {
             "progressBar": true,
             "closeButton": true,
         }) 
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
     }
     else{
-        alert("Depositaste: "+Cantidades +" Dogecoins")
-        alert("Tu  nuevo saldo es: "+saldos +" Dogecoins")
+        toastr.info('Tu nuevo saldo es $'+saldos +' Dogecoins')
+        toastr.success('Depositaste de manera exitosa $'+Cantidades +' Dogecoins')
+        //alert("Depositaste: "+Cantidades +" Dogecoins")//
+        //alert("Tu  nuevo saldo es: "+saldos +" Dogecoins")//
     }
     
 }
@@ -122,23 +125,26 @@ function retirarMontos(){
     const saldos = parseFloat(Cantidades1 - Cantidades)
     if(saldos<10){
         const egresos = Cantidades1 - 10
-        alert("Tu egreso excede nuestra Dogelitica, puedes retirar hasta: "+ egresos +" Dogecoins")
+        toastr.warning('Tu retiro excede nuestra Dogepolitica, puedes retirar hasta $'+ egresos+'Dogecoins')
+        //alert("Tu egreso excede nuestra Dogelitica, puedes retirar hasta: "+ egresos +" Dogecoins")//
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
     }
     else if(document.getElementById('retirar_dogecoin').value===""){
-        alert("Ingresa el monto que deseas retirar")
+    toastr.warning('Estimado Dogecliente, ingresa el monto que deseas retirar')
+        //alert("Ingresa el monto que deseas retirar")//
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
     }
     else if(document.getElementById('retirar_dogecoin').value<0){
-        toastr.error(' no es cierto, ingresa una cantidad positiva','Error de Javas...', {
+        toastr.error('No puedes retirar cantidades negativas, ingresa un valor positivo','Tenemos un código 3312', {
             "progressBar": true,
             "closeButton": true,
         })
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
-    }
-    
+    } 
     else{
-        alert("Estas retiranto: "+Cantidades +" Dogecoins")
-        alert("Tu  nuevo saldo es: "+saldos +" Dogecoins")
+        toastr.info('Tu nuevo saldo es $'+saldos +' Dogecoins')
+        toastr.success('Retiraste de manera exitosa$'+Cantidades +' Dogecoins')
+        //alert("Estas retiranto: "+Cantidades +" Dogecoins")//
+        //alert("Tu  nuevo saldo es: "+saldos +" Dogecoins")//
     }
 }
