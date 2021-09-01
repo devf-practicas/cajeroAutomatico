@@ -77,3 +77,39 @@ function cerrarSesion () {
     const Sesion = document.getElementById('cerrar_id')
     window.location = "/"
 }
+
+//Interfaze Ever
+
+function consultarSaldos(){
+    const Cantidades=document.getElementById('consultas_id').value
+    alert("Su saldo en cuenta es: "+Cantidades)
+}
+function ingresarMontos(){
+    const Cantidades = parseFloat(document.getElementById('insertar_dogecoin').value)
+    const Cantidades1 = parseFloat(document.getElementById('consultas_id').value)
+    document.getElementById('consultas_id').value = parseFloat(Cantidades + Cantidades1)
+    const saldos = parseFloat(Cantidades + Cantidades1)
+    if(saldos>991){
+        const ingresos = 990 - Cantidades1
+        alert("Su ingreso excede nuestra politica, puede ingresar hasta: "+ ingresos)
+        document.getElementById('consultas_id').value = parseFloat(Cantidades1)
+    }else{
+        alert("Su monto ingresado es: "+Cantidades)
+        alert("Su saldo es: "+saldos)
+    }
+    
+}
+function retirarMontos(){
+    const Cantidades = parseFloat(document.getElementById('retirar_dogecoin').value)
+    const Cantidades1 = parseFloat(document.getElementById('consultas_id').value)
+    document.getElementById('consultas_id').value = parseFloat( Cantidades1 - Cantidades)
+    const saldos = parseFloat(Cantidades1 - Cantidades)
+    if(saldos<10){
+        const egresos = Cantidades1 - 10
+        alert("Su egreso excede nuestra politica, puede retirar hasta: "+ egresos)
+        document.getElementById('consultas_id').value = parseFloat(Cantidades1)
+    }else{
+        alert("Su monto a retirar es: "+Cantidades)
+        alert("Su saldo es: "+saldos)
+    }
+}

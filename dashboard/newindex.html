@@ -63,12 +63,12 @@
                 <div class="card mb-4 rounded-3 shadow-sm">
                   <img src="../imgs/icon-boveda.png" class="icon-cuenta">
                   <div class="card-body">
-                    <input class="form-control form-control-lg input-banco" type="number" placeholder="$ 500" disabled>
+                    <input class="form-control form-control-lg input-banco" type="number" id="consultas_id" value="500" placeholder="$ ">
                     
                     <ul class="list-unstyled mt-3 mb-4">
                       <li>Los ahorros de mi vida</li> 
                     </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-outline-primary">Consultar Saldo</button>
+                    <button type="button" class="w-100 btn btn-lg btn-outline-primary" onclick="consultarSaldos()">Consultar Saldo</button>
                   </div>
                 </div>
               </div>
@@ -76,11 +76,11 @@
                 <div class="card mb-4 rounded-3 shadow-sm">
                   <img src="../imgs/icon-ahorro.png" class="icon-cuenta">
                   <div class="card-body">
-                    <input class="form-control form-control-lg input-banco" type="number" placeholder="$ " >
+                    <input class="form-control form-control-lg input-banco" type="number" id="insertar_dogecoin" placeholder="$ " >
                     <ul class="list-unstyled mt-3 mb-4">
                         <li>Insertar Dogecoing</li>
                     </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-primary">Depositar</button>
+                    <button type="button" class="w-100 btn btn-lg btn-primary" onclick="ingresarMontos()">Depositar</button>
                   </div>
                 </div>
               </div>
@@ -88,11 +88,11 @@
                 <div class="card mb-4 rounded-3 shadow-sm border-primary">
                   <img src="../imgs/icon-retiro.png" class="icon-cuenta">
                   <div class="card-body">
-                    <input class="form-control form-control-lg input-banco" type="number" placeholder="$ " >
+                    <input class="form-control form-control-lg input-banco" type="number" id="retirar_dogecoin" placeholder="$ " >
                     <ul class="list-unstyled mt-3 mb-4">
                         <li>Solo para emergencias</li>
                     </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-primary"> Retirar</button>
+                    <button type="button" class="w-100 btn btn-lg btn-primary" onclick="retirarMontos()"> Retirar</button>
                   </div>
                 </div>
               </div>
@@ -102,7 +102,7 @@
             
           </main>
       </div>
-
+      <script type="text/javascript" src="/js/cajero.js"> </script>
       <script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
