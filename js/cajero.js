@@ -93,7 +93,13 @@ function ingresarMontos(){
         const ingresos = 990 - Cantidades1
         alert("Su ingreso excede nuestra politica, puede ingresar hasta: "+ ingresos)
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
-    }else{
+    }
+    
+    else if(document.getElementById('insertar_dogecoin').value===""){
+        alert("Por favor ingresa un monto")
+        document.getElementById('consultas_id').value = parseFloat(Cantidades1)
+    }
+    else{
         alert("Su monto ingresado es: "+Cantidades)
         alert("Su saldo es: "+saldos)
     }
@@ -108,7 +114,13 @@ function retirarMontos(){
         const egresos = Cantidades1 - 10
         alert("Su egreso excede nuestra politica, puede retirar hasta: "+ egresos)
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
-    }else{
+    }
+    else if(document.getElementById('retirar_dogecoin').value===""){
+        alert("Por favor ingresa un monto")
+        document.getElementById('consultas_id').value = parseFloat(Cantidades1)
+    }
+    
+    else{
         alert("Su monto a retirar es: "+Cantidades)
         alert("Su saldo es: "+saldos)
     }
