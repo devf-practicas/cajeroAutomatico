@@ -92,7 +92,7 @@ function ingresarMontos(){
     const saldos = parseFloat(Cantidades + Cantidades1)
     if(saldos>991){
         const ingresos = 990 - Cantidades1
-        toastr.error('Tu ingreso excede nuestra Dogepolitica, puedes ingresar hasta: $'+ ingresos+'Dogecoins')
+        toastr.error('Tu ingreso excede nuestra Dogepolitica, puedes ingresar hasta: $'+ ingresos+' Dogecoins')
         document.getElementById('consultas_id').value = parseFloat(Cantidades1)
     }
     
