@@ -5,16 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/cajero.css">
     
     <title>.: Dashborad:.</title>
 </head>
 <body>
 
-    <header class="p-3 mb-3 border-bottom">
+    <header class="p-3 mb-3 border-bottom headerDogeBank">
         <div class="container">
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-            DogeBank
+            <img src="../imgs/logodogeBank.png">
             </a>
     
            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
@@ -27,13 +28,13 @@
     
             <div class="dropdown text-end">
               <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                <img src="../imgs/icon-user.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
               </a>
               <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style=""> 
                 <li><a class="dropdown-item" href="#">Configuracion</a></li>
                 <li><a class="dropdown-item" href="#">Mi perfil</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Cerra Sesion</a></li>
+                <li><a class="dropdown-item" href="../index.html">Cerra Sesion</a></li>
               </ul>
             </div>
           </div>
@@ -60,13 +61,12 @@
             <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
               <div class="col">
                 <div class="card mb-4 rounded-3 shadow-sm">
-                  <div class="card-header py-3">
-                    <h4 class="my-0 fw-normal">Cuenta Millonaria</h4>
-                  </div>
+                  <img src="../imgs/icon-boveda.png" class="icon-cuenta">
                   <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
+                    <input class="form-control form-control-lg input-banco" type="number" placeholder="$ 500" disabled>
+                    
                     <ul class="list-unstyled mt-3 mb-4">
-                      <li>texto</li> 
+                      <li>Los ahorros de mi vida</li> 
                     </ul>
                     <button type="button" class="w-100 btn btn-lg btn-outline-primary">Consultar Saldo</button>
                   </div>
@@ -74,13 +74,11 @@
               </div>
               <div class="col">
                 <div class="card mb-4 rounded-3 shadow-sm">
-                  <div class="card-header py-3">
-                    <h4 class="my-0 fw-normal">Para mi vejez</h4>
-                  </div>
+                  <img src="../imgs/icon-ahorro.png" class="icon-cuenta">
                   <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/mo</small></h1>
+                    <input class="form-control form-control-lg input-banco" type="number" placeholder="$ " >
                     <ul class="list-unstyled mt-3 mb-4">
-                        <li>texto</li>
+                        <li>Insertar Dogecoing</li>
                     </ul>
                     <button type="button" class="w-100 btn btn-lg btn-primary">Depositar</button>
                   </div>
@@ -88,13 +86,11 @@
               </div>
               <div class="col">
                 <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                  <div class="card-header py-3 text-white bg-primary border-primary">
-                    <h4 class="my-0 fw-normal">Solo para Emergencias</h4>
-                  </div>
+                  <img src="../imgs/icon-retiro.png" class="icon-cuenta">
                   <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
+                    <input class="form-control form-control-lg input-banco" type="number" placeholder="$ " >
                     <ul class="list-unstyled mt-3 mb-4">
-                        <li>texto</li>
+                        <li>Solo para emergencias</li>
                     </ul>
                     <button type="button" class="w-100 btn btn-lg btn-primary"> Retirar</button>
                   </div>

@@ -27,7 +27,7 @@ function validarDatos(){
 
 
     else if(user=="ever" && pass=="ever"){
-        window.location="/dashboard/";  
+        window.location="/dashboard/newindex.html";  
     }
 
     else if(user==="" && pass===""){

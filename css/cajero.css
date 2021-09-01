@@ -9,7 +9,7 @@ Estephano
 /*------------------------------------ Nav Bar */
 
 html {
-    background-color: #56baed;
+   /* background-color: #56baed;*/
   }
   
   body {
@@ -343,4 +343,21 @@ html {
 
 .dropdown-toggle {
   outline: 0;
+}
+
+.icon-cuenta {
+
+  padding-top:50px;
+  width:130px;
+  display:block;
+  margin: auto;
+}
+
+.input-banco {
+  background-color:#eff1f1;
+  font-size:30px !important;
+  text-align: center;
+}
+.headerDogeBank {
+  background: #1e4151 ;
 }
