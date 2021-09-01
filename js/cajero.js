@@ -73,3 +73,7 @@ function retirarMonto(){
         alert("Su saldo es: "+saldo)
     }
 }
+function cerrarSesion () {
+    const Sesion = document.getElementById('cerrar_id')
+    window.location = "/"
+}

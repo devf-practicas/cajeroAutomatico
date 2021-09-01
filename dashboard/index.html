@@ -12,12 +12,12 @@
 
     <h1> Bienvenidos al detalle de tus cuentas</h1>
     <label class="cuenta_personal" for="">Cuenta Personal 001 con Saldo: 
-        <input type="text" value="500" class="form-control" id="cuenta">
+        <input type="number" value="500" class="form-control" id="cuenta">
     </label>
     <hr>
     <form class="ingrese_monto" action="">
         <label for="">Ingrese Monto
-            <input type="text" name="monto" id="monto1">
+            <input type="number" name="monto" id="monto1">
         </label>
        
     </form>
@@ -26,7 +26,7 @@
         <input type="button" value="Consulta" class="consulta_class" id="consulta_id" onclick="consultarSaldo()">
         <input type="button" value="Ingreso de Monto" class="ingreso_class" id="ingreso_id" onclick="ingresarMonto()">
         <input type="button" value="Retirar Monto" class="retiro_class" id="retiro_id" onclick="retirarMonto()">
-        <button type="button" class="btn btn-danger" id="cerrar_id">Cerrar sesion</button>
+        <button type="button" class="btn btn-danger" id="cerrar_id" onclick="cerrarSesion()">Cerrar sesion</button>
     </div>
     
     <script type="text/javascript" src="/js/cajero.js"> </script>
