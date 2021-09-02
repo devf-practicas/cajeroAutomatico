@@ -11,17 +11,17 @@ function validarDatos(){
     
 
     if(user=="carlos" && pass=="carlos"){
-        window.location="/dashboard/"; 
+        window.location="/dashboard/newindex.html"; 
         //alert("Hola Carlos ")
     }
 
     else if(user=="cecilia" && pass=="cecilia"){
-        window.location="/dashboard/"; 
+        window.location="/dashboard/newindex.html"; 
         //alert("Hola Cecilia")
     }
 
     else if(user=="stephano" && pass=="stephano"){
-        window.location="/dashboard/"; 
+        window.location="/dashboard/newindex.html"; 
         //alert("Hola Estephano")
     }
 
