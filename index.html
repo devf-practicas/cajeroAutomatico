@@ -23,12 +23,12 @@
       
           <!-- Login Form -->
           <form onsubmit="return validarDatos();" >
-            <select id="user" class="fadeIn second">
-              <option value="select">seleccione cuenta</option>
-              <option value="ever">Ever</option>
-              <option value="carlos">Carlos</option>
-              <option value="stephano">Stephano</option>
-              <option value="ceci">Ceci</option>
+            <select id="user" class="form-select" size="5" multiple aria-label="multiple select example">
+              <option selected>Seleccione cuenta</option>
+              <option value="stephano">Cuenta Stephano</option>
+              <option value="carlos">Cuenta Carlos</option>
+              <option value="ever">Cuenta Ever</option>
+              <option value="cecilia">Cuenta Ceci</option>
             </select>
             <!--<input type="text" id="user" class="fadeIn second" name="login" placeholder="usuario"> -->
             <input type="text" id="password" class="fadeIn third" name="login" placeholder="contraseña">
