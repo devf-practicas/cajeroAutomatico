@@ -31,15 +31,30 @@ function validarDatos(){
     }
 
     else if(user==="" && pass===""){
-        alert("Por favor ingresa un usuario y un password")
+        toastr.warning('Selecciona un cliente e ingresa su password', {
+            "progressBar": true,
+            "closeButton": true,
+        })
     }
 
 
     else{
-        alert("usuario o  password incorrectos")
+        toastr.error('Usuario o password incorrectos ;(', {
+            "progressBar": true,
+            "closeButton": true,
+        }) 
     }
     return false;  // Add return false, because submitting a form will refresh the page return false will keep the page static and your window.location.href will redirect.
 } 
+
+
+var cuentas = [
+    { nombre: "ever", saldo: 200, password: 'ever'},
+    { nombre: "Gera", saldo: 290, password: 'l33t' },
+    { nombre: "Maui", saldo: 67, password: '123' }
+];
+
+
 function consultarSaldo(){
     const Cantidad=document.getElementById('cuenta').value
     alert("Su saldo en cuenta es: "+Cantidad)
