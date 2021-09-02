@@ -3,6 +3,7 @@ body {
   background-size: cover;
   background-position-y:bottom ;
   background-position-x: right;
+  height: 100vh;
 }
 
 .container {
