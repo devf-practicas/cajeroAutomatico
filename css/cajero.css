@@ -1,6 +1,8 @@
 body {
-  background-image:url('../imgs/logo_banco.jpg');
-  background-size: 75%;
+  background-image:url('../imgs/bglogin.jpg');
+  background-size: cover;
+  background-position-y:bottom ;
+  background-position-x: right;
 }
 
 .container {
@@ -32,4 +34,9 @@ body {
 }
 .headerDogeBank {
   background: #1e4151 ;
+}
+#movimientos {
+  background:rgba(255, 255, 255, 0.459);
+  height: 100vh;
+  
 }
