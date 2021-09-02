@@ -11,7 +11,7 @@ function validarDatos(){
     
 
     if(user=="carlos" && pass=="carlos"){
-        window.location="/dashboard/newindex.html"; 
+        window.location="./dashboard/newindex.html"; 
         //alert("Hola Carlos ")
     }
 
@@ -21,13 +21,13 @@ function validarDatos(){
     }
 
     else if(user=="stephano" && pass=="stephano"){
-        window.location="/dashboard/newindex.html"; 
+        window.location="./dashboard/newindex.html"; 
         //alert("Hola Estephano")
     }
 
 
     else if(user=="ever" && pass=="ever"){
-        window.location="/dashboard/newindex.html";  
+        window.location="./dashboard/newindex.html";  
     }
 
     else if(user==="" && pass===""){
