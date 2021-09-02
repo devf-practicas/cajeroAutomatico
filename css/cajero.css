@@ -363,3 +363,13 @@ html {
 .headerDogeBank {
   background: #1e4151 ;
 }
+
+.selectLogin {
+  background:#f6f6f6;
+  width:84%;
+  margin: auto;
+}
+
+.selectLogin option:checked {
+  background: lime;
+}
