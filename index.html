@@ -1,48 +1,154 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/cajero.css">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Cajero Automático</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
    
-    <title>Login</title>
-</head>
-<body class="backgroundLogin">
+    <link href="../css/cajero.css" rel="stylesheet">
     
-    <div class="wrapper fadeInDown">
-        <div id="formContent">
-          <!-- Tabs Titles -->
-      
-          <!-- Icon -->
-          <div class="fadeIn first">
-            <img src="imgs/sdogeabank-ini.png" class="imgLogin" alt="User Icon" />
-          </div>
-      
-          <!-- Login Form -->
-          <form onsubmit="return validarDatos();" >
-            <select id="user" class="form-select" size="5" multiple aria-label="multiple select example">
-              <option selected>Seleccione cuenta</option>
-              <option value="stephano">Cuenta Stephano</option>
-              <option value="carlos">Cuenta Carlos</option>
-              <option value="ever">Cuenta Ever</option>
-              <option value="cecilia">Cuenta Ceci</option>
-            </select>
-            <!--<input type="text" id="user" class="fadeIn second" name="login" placeholder="usuario"> -->
-            <input type="text" id="password" class="fadeIn third" name="login" placeholder="contraseña">
-            <input type="submit" class="fadeIn fourth" value="Ingresar" >
-          </form>
-      
-          <!-- Remind Passowrd -->
-          <div id="formFooter">
-            <a class="underlineHover" href="#">¿Olvidaste la contraseña?</a>
-          </div>
-      
+    
+    <!-- Custom styles for this template -->
+    
+  </head>
+  <body>
+    
+  </header>
+
+  <main id="home" class="container">
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">Seleccione una cuenta</h1>
+    
+    </div>
+    <!-- Construimos los div de cada cuenta del ARRAY -->
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center" id="homeCuentas">
+    </div>
+    <!-- end div-->
+  </main>  
+  </div>
+
+<!-- Modal login -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Acceder a la cuenta</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <main class="form-signin">
+            <form id="form" name="form">
+              <h1 class="h3 mb-3 fw-normal text-center">Ingresar datos</h1>
+              <input type="hidden" id="cuenta" value="0">
+              <div class="form-floating mb-2">
+                <input type="text" class="form-control" id="user" placeholder="usuario">
+                <label for="user">User</label>
+              </div>
+              <div class="form-floating mb-2">
+                <input type="password" class="form-control" id="pass" placeholder="Password">
+                <label for="pass">Password</label>
+              </div>
+              <button class="w-100 btn btn-lg btn-primary" type="button" onclick="validarDatos()">Sign in</button>
+              <button type="button" class="w-100 btn btn-lg btn-secondary mt-2" data-bs-dismiss="modal">Cancel</button>
+            </form>
+          </main>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+<!-- end modal login -->
+
+<!-- movimientos -->
+  <div id="movimientos" style="display: none;">
+    <div class="container headerDogeBank p-3 mb-3 border-bottom">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+          <img src="../imgs/logodogeBank.png">
+        </a>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"></ul>
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="../imgs/icon-user.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style=""> 
+            <li><a class="dropdown-item" href="#">Configuracion</a></li>
+            <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="index.html">Cerrar Sesion</a></li>
+          </ul>
         </div>
       </div>
+    </div>
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h2 id="persona">Hola</h2>
+        <p class="fs-5 text-muted">Aqui podras realizar todas tus operaciones de forma electronica y segura ¡Quedate en casa! (Pero no en la de tu suegra)</p>
+    </div>
+      <div class="container">
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                  <img src="../imgs/icon-boveda.png" class="icon-cuenta">
+                  <div class="card-body">
+                    <input type="hidden" id="saldoOculto" value="0">
+                    
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1">$</span>
+                      <input class="form-control form-control-lg input-banco" type="text" id="saldo" placeholder="****" readonly="" />
 
-<script type="text/javascript" src="js/cajero.js"> </script>
+                    </div>
+                    
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Los ahorros de mi vida</li> 
+                    </ul>
+                    <button type="button" class="w-100 btn btn-lg btn-outline-primary" onclick="movimientos('consultar')">Consultar Saldo</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                  <img src="../imgs/icon-ahorro.png" class="icon-cuenta">
+                  <div class="card-body">
+                    <input class="form-control form-control-lg input-banco" type="number" id="deposito" placeholder="$ " value='0'>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Insertar Dogecoing</li>
+                    </ul>
+                    <button type="button" class="w-100 btn btn-lg btn-primary" onclick="movimientos('depositar')">Depositar</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm ">
+                  <img src="../imgs/icon-retiro.png" class="icon-cuenta">
+                  <div class="card-body">
+                    <input class="form-control form-control-lg input-banco" type="number" id="retiro" placeholder="$ " value="0">
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Solo para emergencias</li>
+                    </ul>
+                    <button type="button" class="w-100 btn btn-lg btn-primary" onclick="movimientos('retirar')"> Retirar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+      </div>
+    </div>
+<!-- end movimientos -->
+
+<div id="mensaje"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+<script src="../js/bootstrap.bundle.min.js" ></script>
+<script type="text/javascript" src="../js/cajero.js"></script>
+
+
+
 </body>
 </html>
