@@ -23,7 +23,14 @@
       
           <!-- Login Form -->
           <form onsubmit="return validarDatos();" >
-            <input type="text" id="user" class="fadeIn second" name="login" placeholder="usuario">
+            <select id="user" class="fadeIn second">
+              <option value="select">seleccione cuenta</option>
+              <option value="ever">Ever</option>
+              <option value="carlos">Carlos</option>
+              <option value="stephano">Stephano</option>
+              <option value="ceci">Ceci</option>
+            </select>
+            <!--<input type="text" id="user" class="fadeIn second" name="login" placeholder="usuario"> -->
             <input type="text" id="password" class="fadeIn third" name="login" placeholder="contraseña">
             <input type="submit" class="fadeIn fourth" value="Ingresar" >
           </form>
